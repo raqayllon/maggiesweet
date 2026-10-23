@@ -18,6 +18,7 @@ img{display:block}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
 .pan{animation:pan 14s ease-in-out infinite alternate;will-change:transform}
 @keyframes pan{0%{transform:scale(1.16) translate3d(-4%,0.5%,0)}100%{transform:scale(1.22) translate3d(4%,-0.5%,0)}}
+.g4 .im img{filter:saturate(.68) sepia(.14) contrast(1.07) brightness(1.03)}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 8px}
 .im{position:relative;overflow:hidden;background:#EFE6E1}
 .im img{width:100%;object-fit:cover;object-position:center top;transition:transform .6s ease}
@@ -82,7 +83,9 @@ footer form{width:100%!important}
 
 <!-- Hero (vídeo de campaña) -->
 <section class="hero" style="position: relative; height: 720px; overflow: hidden; background: #8C6A5C">
-<video class="herovid" poster="images/poster.jpg" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Vídeo de campaña Winter 26' de Maggie Sweet" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center"><source src="images/campana.webm" type="video/webm"><source src="images/campana.mp4" type="video/mp4"></video>
+<img src="images/hero_still.jpg" alt="Campaña Maggie Sweet, Vestido Tatiana Floral" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(20, 14, 12, 0.12)"></div>
+<button aria-label="Reproducir vídeo de campaña" style="position: absolute; left: 50%; top: 60%; transform: translate(-50%, -50%); z-index: 2; width: 104px; height: 104px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.9); background: rgba(255, 255, 255, 0.16); backdrop-filter: blur(6px); color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left: 5px"><path d="M7 4.5l13 7.5-13 7.5z"></path></svg></button>
 <a href="#" aria-label="Maggie Sweet, inicio" style="position: absolute; left: 35px; top: 62px; z-index: 3"><img src="images/logoXL.png" alt="Maggie Sweet" style="width: 180px; height: auto; filter: brightness(0) invert(1)"></a>
 <div style="position: absolute; right: 35px; top: 65px; z-index: 3; display: flex; align-items: center; gap: 12px; padding: 8px 14px; border-radius: 9px; background: rgba(28, 28, 28, 0.31); backdrop-filter: blur(5px); color: #FFFFFF; font-size: 14px">
 <button aria-label="Idioma: español" style="background: none; border: 0; color: #FFFFFF; font-family: inherit; font-size: 14px; padding: 8px 2px; cursor: pointer; display: flex; gap: 4px; align-items: center"><svg width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg>ES</button>
