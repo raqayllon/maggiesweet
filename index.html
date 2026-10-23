@@ -48,8 +48,9 @@ img{display:block}
 </style>
 
 <style>
+section.hero{height:80vh!important;min-height:560px;max-height:860px}
 @media (max-width:900px){
-.hero{height:620px!important}
+.hero{height:640px!important;max-height:none}
 .hero > a img{width:130px!important}.hero > a{left:16px!important;top:22px!important}
 .hero > div[style*="right: 35px"]{right:12px!important;top:16px!important;gap:4px!important;padding:4px 8px!important}
 .film{grid-template-columns:repeat(2,minmax(0,1fr))}.film img:nth-child(n+3){display:none}
@@ -81,7 +82,7 @@ footer form{width:100%!important}
 
 <!-- Hero (vídeo de campaña) -->
 <section class="hero" style="position: relative; height: 720px; overflow: hidden; background: #8C6A5C">
-<img class="pan" src="images/hero_full.jpg" alt="Campaña New Collection Winter 26' de Maggie Sweet" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center">
+<video class="herovid" poster="images/poster.jpg" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Vídeo de campaña Winter 26' de Maggie Sweet" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center"><source src="images/campana.webm" type="video/webm"><source src="images/campana.mp4" type="video/mp4"></video>
 <a href="#" aria-label="Maggie Sweet, inicio" style="position: absolute; left: 35px; top: 62px; z-index: 3"><img src="images/logoXL.png" alt="Maggie Sweet" style="width: 180px; height: auto; filter: brightness(0) invert(1)"></a>
 <div style="position: absolute; right: 35px; top: 65px; z-index: 3; display: flex; align-items: center; gap: 12px; padding: 8px 14px; border-radius: 9px; background: rgba(28, 28, 28, 0.31); backdrop-filter: blur(5px); color: #FFFFFF; font-size: 14px">
 <button aria-label="Idioma: español" style="background: none; border: 0; color: #FFFFFF; font-family: inherit; font-size: 14px; padding: 8px 2px; cursor: pointer; display: flex; gap: 4px; align-items: center"><svg width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg>ES</button>
@@ -375,11 +376,11 @@ footer form{width:100%!important}
 <div></div>
 </div>
 <div style="padding: 60px 30px 30px; display: flex; flex-direction: column; align-items: center; gap: 30px">
-<img src="images/logoXL.png" alt="Maggie Sweet" style="width: 1180px; max-width: 100%; height: auto">
+<img src="images/logoXL.png" alt="Maggie Sweet" style="width: 1180px; max-width: 100%; height: auto; filter: brightness(0)">
 <p style="margin: 0 0 40px; font-size: 14px; color: #999999">2026 © Maggie Sweet. Todos los derechos reservados</p>
 </div>
 </footer>
 </div>
 
-</body>
+<script>var v=document.querySelector(".herovid");if(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}</script></body>
 </html>
