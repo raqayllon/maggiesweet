@@ -14,16 +14,10 @@ body{margin:0;background:#FFFFFF}
 a{color:#1C1C1C;text-decoration:none}a:hover{color:#555555}
 img{display:block}
 .hero a,.dark a{color:#FFFFFF}.hero a:hover,.dark a:hover{color:#FFFFFF}
-.kb{animation:kb 9s ease-in-out infinite alternate;transform-origin:center 30%}
-@keyframes kb{from{transform:scale(1)}to{transform:scale(1.09)}}
-.slide{position:absolute;inset:0;overflow:hidden;opacity:0;animation:fade 18s infinite}
-.s1{animation-delay:0s;opacity:1}.s2{animation-delay:6s}.s3{animation-delay:12s}
-@keyframes fade{0%{opacity:0}6%{opacity:1}33%{opacity:1}39%{opacity:0}100%{opacity:0}}
-.film{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.film3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-.film img,.film3 img{min-width:0}
-.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);animation:dot 18s infinite}
-.d1{animation-delay:0s}.d2{animation-delay:6s}.d3{animation-delay:12s}
-@keyframes dot{0%,33%{background:#FFFFFF}34%,100%{background:rgba(255,255,255,.45)}}
+.kb{animation:kb 20s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+.pan{animation:pan 14s ease-in-out infinite alternate;will-change:transform}
+@keyframes pan{0%{transform:scale(1.16) translate3d(-4%,0.5%,0)}100%{transform:scale(1.22) translate3d(4%,-0.5%,0)}}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 8px}
 .im{position:relative;overflow:hidden;background:#EFE6E1}
 .im img{width:100%;object-fit:cover;object-position:center top;transition:transform .6s ease}
@@ -49,7 +43,7 @@ img{display:block}
 .fcols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .fcols a{color:#7C7C7C}.fcols a:hover{color:#333333}
 .pay{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 12px;border:1px solid #A6AFA9;border-radius:3px;font-size:12px;font-weight:500;color:#58656D}
-@media (prefers-reduced-motion:reduce){.kb,.slide,.dot{animation:none}.s2,.s3{display:none}}
+@media (prefers-reduced-motion:reduce){.kb,.pan{animation:none}}
 @media (max-width:900px){.g4{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 6px}.mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;height:auto}.mosaic > a{grid-area:auto!important;height:220px}.rail{overflow-x:auto}.rail > a{flex-basis:220px}.feat,.fcols{grid-template-columns:repeat(2,minmax(0,1fr))}.club,.gtl{flex-direction:column}.club > div,.gtl > div{width:100%!important}}
 </style>
 
@@ -87,9 +81,7 @@ footer form{width:100%!important}
 
 <!-- Hero (vídeo de campaña) -->
 <section class="hero" style="position: relative; height: 720px; overflow: hidden; background: #8C6A5C">
-<div class="slide s1"><img class="kb" src="images/hero_full.jpg" alt="Campaña New Collection Winter 26' de Maggie Sweet" style="width: 100%; height: 100%; object-fit: cover; object-position: center center"></div>
-<div class="slide s2 film"><img class="kb" src="images/DIPLOMATICATANIABLUE.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 22%"><img class="kb" src="images/M112.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 22%"><img class="kb" src="images/MONODIPLOMA.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 22%"><img class="kb" src="images/mmm6.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 22%"></div>
-<div class="slide s3 film3"><img class="kb" src="images/MMMINNIE.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%"><img class="kb" src="images/louise1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%"><img class="kb" src="images/M34.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%"></div>
+<img class="pan" src="images/hero_full.jpg" alt="Campaña New Collection Winter 26' de Maggie Sweet" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center">
 <a href="#" aria-label="Maggie Sweet, inicio" style="position: absolute; left: 35px; top: 62px; z-index: 3"><img src="images/logoXL.png" alt="Maggie Sweet" style="width: 180px; height: auto; filter: brightness(0) invert(1)"></a>
 <div style="position: absolute; right: 35px; top: 65px; z-index: 3; display: flex; align-items: center; gap: 12px; padding: 8px 14px; border-radius: 9px; background: rgba(28, 28, 28, 0.31); backdrop-filter: blur(5px); color: #FFFFFF; font-size: 14px">
 <button aria-label="Idioma: español" style="background: none; border: 0; color: #FFFFFF; font-family: inherit; font-size: 14px; padding: 8px 2px; cursor: pointer; display: flex; gap: 4px; align-items: center"><svg width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg>ES</button>
@@ -98,7 +90,6 @@ footer form{width:100%!important}
 <button aria-label="Mi cuenta" style="background: none; border: 0; color: #FFFFFF; padding: 8px 4px; cursor: pointer"><svg width="20" height="19" viewBox="0 0 20 19" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="10" cy="6.5" r="6"></circle><path d="M1 17.8a10.5 10.5 0 0118.2 0" stroke-linecap="round"></path></svg></button>
 <button aria-label="Abrir menú" style="background: none; border: 0; color: #FFFFFF; padding: 8px 4px; cursor: pointer"><svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="M0 3h30M0 9h30"></path></svg></button>
 </div>
-<div aria-hidden="true" style="position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 3; display: flex; gap: 8px"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
 </section>
 
 <!-- NEW IN -->
